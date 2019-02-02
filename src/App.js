@@ -9,7 +9,6 @@ import { Home, Lesson } from './views';
 
 class NoMatch extends Component {
     render() {
-      console.log(this.props.match);
         return (
             <div>
                 <p>Nothing to see here.</p>
@@ -20,19 +19,20 @@ class NoMatch extends Component {
 
 class App extends Component {
   render() {
-    console.log('rendering');
     return (
       <div>
-        <Nav />
-        <Header />
           <Router>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/lessons/:lessonId" render={props => {
-                return <Lesson />
-              }} />
-              <Route component={NoMatch} />
-            </Switch>
+            <div>
+              <Nav />
+              <Header />
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/lessons/:lessonId" render={props => {
+                  return <Lesson />
+                }} />
+                <Route component={NoMatch} />
+              </Switch>
+            </div>
           </Router>
       </div>
     );
