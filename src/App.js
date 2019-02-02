@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link, Switch, withRouter } from "react-
 
 import './App.css';
 
-import { Header, LessonBox } from './components';
+import { Header, Nav, LessonBox } from './components';
 import { Home, Lesson } from './views';
 
 class NoMatch extends Component {
@@ -23,6 +23,7 @@ class App extends Component {
     console.log('rendering');
     return (
       <div>
+        <Nav />
         <Header />
           <Router>
             <Switch>
