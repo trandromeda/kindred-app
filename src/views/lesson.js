@@ -4,16 +4,16 @@ import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-d
 
 import { Header, LessonBox } from '../components';
 
-class Lesson extends Component {
+class Lesson extends React.Component {
   render() {
-    console.log(this.props.match)
+    console.log(this.props.match);
     return (
       <div>
-          <h1>Lesson</h1>
+          <h1>Lesson {this.props.match.params.lessonId}</h1>
           <p>Something</p>
       </div>
     );
   }
 }
 
-export default Lesson;
+export default withRouter(Lesson);

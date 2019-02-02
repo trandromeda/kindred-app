@@ -7,18 +7,30 @@ import './App.css';
 import { Header, LessonBox } from './components';
 import { Home, Lesson } from './views';
 
+class NoMatch extends Component {
+    render() {
+      console.log(this.props.match);
+        return (
+            <div>
+                <p>Nothing to see here.</p>
+            </div>
+        )
+    }
+}
+
 class App extends Component {
   render() {
-    const lessons = [0,1,2,3, 4, 5, 6].map(lesson => {
-      return <LessonBox />
-    })
+    console.log('rendering');
     return (
       <div>
         <Header />
           <Router>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="lessons/:lessonId" component={withRouter(Lesson)} />
+              <Route path="/lessons/:lessonId" render={props => {
+                return <Lesson />
+              }} />
+              <Route component={NoMatch} />
             </Switch>
           </Router>
       </div>
