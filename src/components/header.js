@@ -1,13 +1,10 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
+import styled from 'styled-components';
 
-class Header extends Component {
-    render() {
-        return (
-            <div className="header">
-                This is where the header will be.
-            </div>
-        )
-    }
-}
+const Header = styled.div`
+    width: 100%;
+    height: 50vh;
+    background: yellow;
+`
 
 export default Header;
