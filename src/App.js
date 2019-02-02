@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Link, Switch, withRouter } from "react-router-dom";
+
 import './App.css';
 
 import { Header, LessonBox } from './components';
-
-const LessonsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-`
+import { Home, Lesson } from './views';
 
 class App extends Component {
   render() {
@@ -18,10 +15,12 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <p>Stuff here</p>
-        <LessonsContainer>
-          {lessons}
-        </LessonsContainer>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="lessons/:lessonId" component={withRouter(Lesson)} />
+            </Switch>
+          </Router>
       </div>
     );
   }
