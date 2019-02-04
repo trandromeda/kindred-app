@@ -1,6 +1,6 @@
 import { ADD_REQUEST, ADD_LESSON } from "./actionTypes";
 
-let nextLessonId = 0;
+let nextLessonId = 4;
 
 export const addRequest = content => ({
   type: ADD_REQUEST,
