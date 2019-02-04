@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const Container = styled.div`
     width: 30%;
+    min-width: 350px;
     height: auto;
     margin: 1vh 1vw;
     position: relative;
