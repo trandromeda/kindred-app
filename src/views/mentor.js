@@ -39,7 +39,6 @@ class Mentor extends Component {
 
   handleFocus = event => {
     const { name } = event.target;
-    console.log(name);
 
     switch (name) {
       case 'category': {
@@ -86,7 +85,6 @@ class Mentor extends Component {
 
   render() {
     const { guide } = this.state;
-    console.log(guide);
     return (
       <Container>
         <div>
