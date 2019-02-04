@@ -33,7 +33,7 @@ class Nav extends Component {
     render() {
         return (
             <Navbar>
-                <img src={logo} />
+                <Link to="/"><img src={logo} /></Link>
                 <NavList>
                     <NavItem>
                         <Link to="/mentor">Mentor</Link>
