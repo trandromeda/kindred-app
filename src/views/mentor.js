@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { addLesson } from '../redux/actions';
 
 const Container = styled.div`
   padding: 15px 25px;
@@ -73,8 +75,13 @@ class Mentor extends Component {
   }
 
   handleSubmit = event => {
-    event.preventDefault();
-    alert('submitted');
+      event.preventDefault();
+      const content = {
+        title: this.state.title,
+        desc: this.state.desc,
+        category: this.state.category,
+      }
+      this.props.addLesson(content);
   }
 
   render() {
@@ -132,4 +139,7 @@ class Mentor extends Component {
   }
 }
 
-export default Mentor;
+export default connect(
+  null,
+  { addLesson }
+)(Mentor);

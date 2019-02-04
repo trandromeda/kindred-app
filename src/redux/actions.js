@@ -9,7 +9,7 @@ export const addRequest = content => ({
   }
 });
 
-export const addLesson = (id, content) => ({
+export const addLesson = (content) => ({
   type: ADD_LESSON,
   payload: {
     id: ++nextLessonId,
