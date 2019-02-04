@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Link, Switch, withRouter } from "react-
 import './App.css';
 
 import { Header, Nav, LessonBox } from './components';
-import { Home, Lesson, Mentor } from './views';
+import { Home, Lesson, Mentor, Dashboard } from './views';
 
 class NoMatch extends Component {
     render() {
@@ -31,6 +31,7 @@ class App extends Component {
                   return <Lesson />
                 }} />
                 <Route  path="/mentor" component={Mentor} />
+                <Route  path="/dashboard" component={Dashboard} />
                 <Route component={NoMatch} />
               </Switch>
             </div>

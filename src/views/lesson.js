@@ -27,7 +27,7 @@ const Column = styled.div`
   padding: 25px;
 `;
 
-class Lesson extends React.Component {
+class Lesson extends Component {
   constructor() {
     super();
     this.state = {

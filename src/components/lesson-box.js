@@ -61,7 +61,7 @@ class LessonBox extends Component {
                 <Link to={`lessons/${lessonId}`}>
                 <Photo image={image} />
                 <Category>Category</Category>
-                <h3>Lesson Title</h3>
+                <h3>Lesson {lessonId}: Title</h3>
                 <TeacherName>with Teacher</TeacherName>
                 <Blurb>Description</Blurb>
                 <Figures>

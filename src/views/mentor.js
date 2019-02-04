@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
 
-import { Header, LessonBox } from '../components';
 
-class Mentor extends React.Component {
+class Mentor extends Component {
   render() {
     return (
       <div>
