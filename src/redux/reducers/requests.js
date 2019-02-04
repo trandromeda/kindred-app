@@ -1,7 +1,7 @@
 import { ADD_REQUEST } from '../actionTypes';
 
 const initialState = {
-    requests: ['knitting'],
+    allRequests: ['knitting', 'agriculture'],
 };
 
 export default function(state = initialState, action) {
@@ -10,7 +10,7 @@ export default function(state = initialState, action) {
             const { content } = action.payload;
             return {
                 ...state,
-                requests: [...state.requests, content]
+                allRequests: [...state.allRequests, content]
             }
         }
         default:

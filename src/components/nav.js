@@ -38,7 +38,9 @@ class Nav extends Component {
                     <NavItem>
                         <Link to="/mentor">Mentor</Link>
                     </NavItem>
-                    <NavItem>About</NavItem>
+                    <NavItem>
+                        <Link to="/dashboard">Dashboard</Link>
+                    </NavItem>
                     <NavItem>Contact</NavItem>
                 </NavList>
             </Navbar>
