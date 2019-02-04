@@ -1,25 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import styled from 'styled-components';
+import { BrowserRouter as Router, Route, Link, Switch, withRouter } from "react-router-dom";
+
 import './App.css';
+
+import { Header, Nav, LessonBox } from './components';
+import { Home, Lesson, Mentor } from './views';
+
+class NoMatch extends Component {
+    render() {
+        return (
+            <div>
+                <p>Nothing to see here.</p>
+            </div>
+        )
+    }
+}
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+          <Router>
+            <div>
+              <Nav />
+              <Header />
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/lessons/:lessonId" render={props => {
+                  return <Lesson />
+                }} />
+                <Route  path="/mentor" component={Mentor} />
+                <Route component={NoMatch} />
+              </Switch>
+            </div>
+          </Router>
       </div>
     );
   }
