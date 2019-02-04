@@ -6,6 +6,9 @@ const Header = styled.div`
     height: 40vh;
     padding-top: 75px;
     background: yellow;
+
+
+    background-image: url('https://picsum.photos/1400/900?gravity=north');
 `
 
 export default Header;

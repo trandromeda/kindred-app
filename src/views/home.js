@@ -15,8 +15,9 @@ const LessonsContainer = styled.div`
 
 class Home extends Component {
     render() {
-        const lessons = [0,1,2,3, 4, 5, 6].map(lesson => {
-            return <Link to={`lessons/${lesson.toString()}`} key={lesson.toString()}><LessonBox /></Link>
+        const lessons = [1,2,3, 4, 5, 6].map(lesson => {
+            const image = 'https://picsum.photos/300/188?random';
+            return <LessonBox key={lesson.toString()} lessonId={lesson} image={image} />
         })
         return (
             <div>
