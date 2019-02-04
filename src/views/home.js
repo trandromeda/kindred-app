@@ -4,12 +4,13 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import '../App.css';
 
-import { LessonBox } from '../components';
+import { LessonBox, Search } from '../components';
 import { Lesson } from '../views';
 
 const LessonsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 `
 
 class Home extends Component {
@@ -19,7 +20,7 @@ class Home extends Component {
         })
         return (
             <div>
-            <p>Welcome!</p>
+                <Search />
         <LessonsContainer>
           {lessons}
         </LessonsContainer>
