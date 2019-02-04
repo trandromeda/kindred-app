@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Route, Link } from "react-router-dom";
 
 import logo from '../kindred-logo.png';
 
@@ -36,12 +36,14 @@ class Nav extends Component {
                 <Link to="/"><img src={logo} /></Link>
                 <NavList>
                     <NavItem>
-                        <Link to="/mentor">Mentor</Link>
+                        <Link to="/signup">Sign Up</Link>
                     </NavItem>
                     <NavItem>
                         <Link to="/dashboard">Dashboard</Link>
                     </NavItem>
-                    <NavItem>Contact</NavItem>
+                    <NavItem>
+                        <Link to="/planner">Plan Lesson</Link>
+                    </NavItem>
                 </NavList>
             </Navbar>
         )

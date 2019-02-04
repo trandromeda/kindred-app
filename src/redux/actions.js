@@ -1,6 +1,6 @@
 import { ADD_REQUEST, ADD_LESSON } from "./actionTypes";
 
-let nextLessonId = 0;
+let nextLessonId = 4;
 
 export const addRequest = content => ({
   type: ADD_REQUEST,
@@ -9,7 +9,7 @@ export const addRequest = content => ({
   }
 });
 
-export const addLesson = (id, content) => ({
+export const addLesson = (content) => ({
   type: ADD_LESSON,
   payload: {
     id: ++nextLessonId,

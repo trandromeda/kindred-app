@@ -10,6 +10,10 @@ const Container = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;;
+
+    a {
+        text-decoration: none;
+    }
 `
 
 const Photo = styled.div`
@@ -31,10 +35,15 @@ const Category = styled.p`
     font-weight: 600
 `;
 
+const Title = styled.h3`
+    display: inline;
+`;
+
 const TeacherName = styled.p`
     margin: 0;
     font-weight: 400;
     color: teal;
+    display: inline;
 `;
 
 const Blurb = styled.p`
@@ -55,18 +64,18 @@ const Figures = styled.div`
 
 class LessonBox extends Component {
     render() {
-        const { image, lessonId } = this.props;
+        const { image, lesson } = this.props;
+        console.log(lesson);
         return(
             <Container>
-                <Link to={`lessons/${lessonId}`}>
-                <Photo image={image} />
-                <Category>Category</Category>
-                <h3>Lesson {lessonId}: Title</h3>
-                <TeacherName>with Teacher</TeacherName>
-                <Blurb>Description</Blurb>
-                <Figures>
-                    <p>Cost and Duration</p>
-                </Figures>
+                <Link to={`lessons/${lesson.id}`}>
+                    <Photo image={image} />
+                    <Category>{lesson.category}</Category>
+                    <Title>{lesson.title}</Title> <TeacherName>with Teacher</TeacherName>
+                    <Blurb>{lesson.desc}</Blurb>
+                    <Figures>
+                        <p>Cost and Duration</p>
+                    </Figures>
                 </Link>
             </Container>
         )

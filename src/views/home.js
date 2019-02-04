@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { connect } from 'react-redux';
+import _ from 'underscore';
 
 import '../App.css';
 
@@ -15,20 +17,30 @@ const LessonsContainer = styled.div`
 
 class Home extends Component {
     render() {
-        const lessons = [1,2,3, 4, 5, 6].map(lesson => {
-            const image = 'https://picsum.photos/300/188?random';
-            return <LessonBox key={lesson.toString()} lessonId={lesson} image={image} />
-        })
+        const image = 'https://picsum.photos/300/188?random';
+        const { lessonsByIds } = this.props;
         return (
             <div>
                 <Search />
                 <h1>See what's being taught</h1>
                 <LessonsContainer>
-                    {lessons}
+                    {lessonsByIds && lessonsByIds.length &&
+                        lessonsByIds.map(lesson => {
+                            return <LessonBox key={lesson.id} lesson={lesson} image={image} />
+                        })
+                    }
                 </LessonsContainer>
             </div>
         )
     }
 }
 
-export default Home;
+const mapStateToProps = state => {
+    return {
+        lessonsByIds: state.lessons.byIds,
+    };
+}
+export default connect(
+    mapStateToProps,
+    null
+)(Home);
