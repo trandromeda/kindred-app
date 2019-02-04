@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import { BrowserRouter as Router, Route, Link, Switch, withRouter } from "react-router-dom";
+// import styled from 'styled-components';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import './App.css';
 
-import { Header, Nav, LessonBox } from './components';
+import { Header, Nav } from 'components';
 import { Home, Lesson, Mentor, Dashboard } from './views';
 
 class NoMatch extends Component {
@@ -30,7 +30,7 @@ class App extends Component {
                 <Route path="/lessons/:lessonId" render={props => {
                   return <Lesson />
                 }} />
-                <Route  path="/mentor" component={Mentor} />
+                <Route  path="/planner" component={Mentor} />
                 <Route  path="/dashboard" component={Dashboard} />
                 <Route component={NoMatch} />
               </Switch>

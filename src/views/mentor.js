@@ -5,8 +5,7 @@ class Mentor extends Component {
   render() {
     return (
       <div>
-          <h1>Mentor </h1>
-          <p>Something</p>
+          <h1>Plan Your Lesson</h1>
       </div>
     );
   }

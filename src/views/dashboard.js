@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
+// import styled from 'styled-components';
 import { connect } from 'react-redux';
-
-import { Header, LessonBox } from '../components';
 
 class Dashboard extends Component {
   render() {
@@ -11,8 +8,8 @@ class Dashboard extends Component {
     return (
       <div>
           <h1>Welcome to your Dashboard</h1>
-          {requests && requests.length && requests.map(request => {
-                return <p>{request}</p>
+          {requests && requests.length && requests.map((request, index) => {
+                return <p key={index}>{request}</p>
             })}
       </div>
     );
