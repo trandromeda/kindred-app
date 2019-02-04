@@ -22,9 +22,10 @@ class Home extends Component {
         return (
             <div>
                 <Search />
-        <LessonsContainer>
-          {lessons}
-        </LessonsContainer>
+                <h1>See what's being taught</h1>
+                <LessonsContainer>
+                    {lessons}
+                </LessonsContainer>
             </div>
         )
     }
