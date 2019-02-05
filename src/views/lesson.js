@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
+import { connect } from 'react-redux';
 import DayPicker from 'react-day-picker';
 
 import 'react-day-picker/lib/style.css';
+
+import { getLessonById } from 'redux/selectors';
 
 import { Header, LessonBox } from '../components';
 
@@ -42,14 +45,18 @@ class Lesson extends Component {
   }
 
   render() {
+    console.log(this.props.lesson);
     return (
       <Container>
         <Column>
           <h1>Lesson {this.props.match.params.lessonId}</h1>
           <p>
+          <h3>About the class</h3>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas laoreet libero et efficitur pulvinar. Morbi in elit lacinia, maximus dui nec, vehicula mi. Nunc mattis augue enim, vulputate blandit lacus euismod non. Sed nec sagittis nisi. In hac habitasse platea dictumst. Suspendisse nec enim vel lectus vulputate ultrices at id tortor. Maecenas tincidunt in metus ut auctor. Duis quam sem, mollis vitae molestie in, pulvinar luctus ex.
           </p>
+          <h3>About the teacher</h3>
           <p>Donec in elit elementum, cursus enim eu, malesuada nibh. Praesent mollis justo leo, non auctor ex aliquet ac. Proin dignissim in lorem vel viverra. Nullam placerat lacus ac turpis interdum, vel accumsan lectus congue. Vivamus eget fermentum tortor. Mauris ante elit, sagittis non dolor et, dictum finibus velit.</p>
+          <h3>What you can expect</h3>
           <p>
           Nullam libero ipsum, finibus ac lacus in, convallis efficitur risus. Suspendisse ultricies lobortis facilisis. Nam venenatis est maximus, placerat libero eget, volutpat tortor. Maecenas posuere turpis est, vel malesuada enim tincidunt ac. Quisque tincidunt tincidunt metus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce molestie tellus non massa vulputate, vestibulum elementum leo elementum.
           </p>
@@ -66,4 +73,12 @@ class Lesson extends Component {
   }
 }
 
-export default withRouter(Lesson);
+const mapStateToProps = (state, props) => {
+    return {
+        // lesson: getLessonById(state, props.match.params.lessonId),
+    };
+}
+export default withRouter(connect(
+    mapStateToProps,
+    null
+)(Lesson));
