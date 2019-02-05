@@ -107,12 +107,6 @@ class Mentor extends Component {
               <textarea value={this.state.desc} name="desc" onChange={this.handleChange} onFocus={this.handleFocus} />
             </label>
 
-
-            <label>
-              You can upload any photos here:
-              <button>Upload</button>
-            </label>
-
             <label>
               Where will the lesson be held?
                 <select value={this.state.location} name="location" onChange={this.handleChange} onFocus={this.handleFocus}>
@@ -131,7 +125,6 @@ class Mentor extends Component {
           </Form>
         </div>
         <div>
-          <h2>Guided walkthrough</h2>
           {guide}
         </div>
     </Container>
