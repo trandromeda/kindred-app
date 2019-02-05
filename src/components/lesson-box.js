@@ -65,11 +65,10 @@ const Figures = styled.div`
 class LessonBox extends Component {
     render() {
         const { image, lesson } = this.props;
-        console.log(lesson);
         return(
             <Container>
                 <Link to={`lessons/${lesson.id}`}>
-                    <Photo image={image} />
+                    <Photo image={lesson.image || image} />
                     <Category>{lesson.category}</Category>
                     <Title>{lesson.title}</Title> <TeacherName>with Teacher</TeacherName>
                     <Blurb>{lesson.desc}</Blurb>
