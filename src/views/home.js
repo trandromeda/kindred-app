@@ -15,6 +15,10 @@ const LessonsContainer = styled.div`
   justify-content: center;
 `
 
+const Description = styled.div`
+    text-align: center;
+`;
+
 class Home extends Component {
     render() {
         const image = 'https://picsum.photos/300/188?random';
@@ -22,7 +26,13 @@ class Home extends Component {
         return (
             <div>
                 <Search />
-                <h1>See what's being taught</h1>
+                <Description>
+                    <h1>Returning authenticity to the way people connect</h1>
+                    <p>
+                    Joining Kindred means you can learn from someone who’s passionate about their craft.
+    Every interaction is face-to-face, different, and tailored to you.
+                    </p>
+                </Description>
                 <LessonsContainer>
                     {lessonsByIds && lessonsByIds.length &&
                         lessonsByIds.map(lesson => {
