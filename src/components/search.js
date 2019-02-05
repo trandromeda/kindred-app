@@ -55,7 +55,7 @@ class SearchBar extends Component {
                 <Options>
                     <Button><p>I want to be a better cook</p></Button>
                     <Button><p>I want to better manage my finances</p></Button>
-                    <Button><p>I want to...</p>
+                    <Button><p>I want to learn about:</p>
                     <form onSubmit={this.handleSubmit}>
                         <input 
                             type="text"
